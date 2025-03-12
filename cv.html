@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>عامر حسن - مطور ويب</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* خلفية بنمط تدرجات زرقاء متحركة */
+        body {
+            background: linear-gradient(45deg, #15244d, #133d98, #343639, #34393e);
+            background-size: 400% 400%;
+            animation: bgAnimation 3s ease infinite;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #f0f0f0;
+        }
+
+        @keyframes bgAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* حدود الصورة المتحركة باللون الأزرق */
+        .animated-border {
+            position: relative;
+            display: inline-block;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .animated-border::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, #3b82f6, #60a5fa, #93c5fd, #60a5fa, #3b82f6);
+            background-size: 300% 300%;
+            border-radius: 50%;
+            animation: borderAnim 4s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes borderAnim {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* تأثير تكبير الصورة عند مرور المؤشر */
+        .animated-border img {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .animated-border:hover img {
+            transform: scale(1.1);
+            /* تكبير الصورة بنسبة 10% */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            /* إضافة ظل للصورة */
+        }
+
+        /* تأثير النص ثلاثي الأبعاد باستخدام اللون الأزرق */
+        .three-d {
+            font-size: 3rem;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            color: #fff;
+        }
+
+        .three-d::before {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #2563eb;
+            z-index: -1;
+            transform: translate(4px, 4px);
+            opacity: 0.7;
+        }
+
+        /* عناوين الأقسام */
+        .section-title {
+            color: #fff;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        /* تصميم البطاقات */
+        .card {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        /* زر أساسي */
+        .btn-primary {
+            background-color: #3b82f6;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #2563eb;
+        }
+
+        /* أيقونات التواصل الاجتماعي */
+        .social-icons i {
+            font-size: 2rem;
+            margin: 0 10px;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons i:hover {
+            color: #3b82f6;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- الهيدر -->
+    <header class="text-center py-16">
+        <div class="animated-border mx-auto mb-4">
+            <img src="image.jpg" alt="عامر حسن" class="w-32 h-32 rounded-full border-4 border-black shadow-lg">
+        </div>
+        <h1 class="three-d" data-text="عبدالله عامر">عبدالله عامر</h1>
+        <p class="mt-4 text-xl">FullStack Developer</p>
+
+        <!-- أيقونات التواصل الاجتماعي -->
+        <div class="social-icons mt-4">
+            <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/+967715935213" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/KkingYE" target="_blank"><i class="fab fa-telegram"></i></a>
+            <a href="https://www.instagram.com/abdullh2030amer?igsh=MWN4eG5zNXkxM2hrbA==" target="_blank"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/abdullah-amer-075511338" target="_blank"><i
+                    class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Abdullahasan515" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </header>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="container mx-auto my-16 px-4">
+        <!-- قسم عني -->
+        <section class="mb-16">
+            <h2 class="section-title">عن المطور</h2>
+            <div class="card p-8">
+                <p class="text-lg text-gray-200">
+                    مطور بخبرة في بناء تطبيقات ويب متكاملة، أمتلك مهارات قوية في تصميم واجهات مستخدم تفاعلية، تطوير
+                    أنظمة خلفية باستخدام قواعد البيانات، وصيانة التطبيقات لضمان أداء عالي.
+                </p>
+            </div>
+        </section>
+
+        <!-- الشهادات -->
+        <section class="mb-16">
+            <h2 class="section-title">الشهادات</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card p-8">
+                    <h4 class="text-xl font-semibold">تطوير الأنظمة الخلفية</h4>
+                    <p class="text-sm text-gray-300">SFC Academy</p>
+                    <ul class="mt-4 text-gray-300">
+                        <li>قواعد البيانات المتكاملة</li>
+                        <li>تطبيقات قابلة للتوسع</li>
+                        <li>درجة التقييم: 98%</li>
+                    </ul>
+                </div>
+                <div class="card p-8">
+                    <h4 class="text-xl font-semibold">صيانة الجوالات</h4>
+                    <p class="text-sm text-gray-300">شهادة معتمدة - يناير 2024</p>
+                    <ul class="mt-4 text-gray-300">
+                        <li>فك وتركيب القطع</li>
+                        <li>تشخيص الأعطال البرمجية</li>
+                        <li>استبدال المكونات التالفة</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- المهارات التقنية -->
+        <section class="mb-16">
+            <h2 class="section-title">المهارات التقنية</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card p-8 text-center">
+                    <h4 class="text-xl font-semibold mb-4">تطوير الواجهات</h4>
+                    <ul class="list-none space-y-2 text-gray-300">
+                        <li>HTML/CSS</li>
+                        <li>تجربة المستخدم (UX)</li>
+                        <li>تصميم تفاعلي</li>
+                    </ul>
+                </div>
+                <div class="card p-8 text-center">
+                    <h4 class="text-xl font-semibold mb-4">تطوير الأنظمة</h4>
+                    <ul class="list-none space-y-2 text-gray-300">
+                        <li>قواعد البيانات</li>
+                        <li>أنظمة الأداء العالي</li>
+                        <li>تأمين التطبيقات</li>
+                    </ul>
+                </div>
+                <div class="card p-8 text-center">
+                    <h4 class="text-xl font-semibold mb-4">أدوات التطوير</h4>
+                    <ul class="list-none space-y-2 text-gray-300">
+                        <li>Git</li>
+                        <li>VS Code</li>
+                        <li>أدوات التحليل</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- اللغات -->
+        <section class="mb-16">
+            <h2 class="section-title">اللغات</h2>
+            <div class="card p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-xl font-semibold">العربية</h4>
+                        <p class="text-sm text-gray-300">اللغة الأم</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold">الإنجليزية</h4>
+                        <p class="text-sm text-gray-300">مستوى جيد جدًا</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- الفوتر -->
+    <footer class="text-center py-6">
+        <p class="mb-0 text-gray-300">© 2025 جميع الحقوق محفوظة FullStack abdullah amer</p>
+    </footer>
+</body>
+
+</html>
